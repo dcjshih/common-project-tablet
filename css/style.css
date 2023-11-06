@@ -55,7 +55,8 @@ ul {
     margin: 20px 0px 20px 0px;
 }
 
-.navbar>a {
+.navbar>a,
+.navbar>div>a {
     margin: 0px 5px 0px 5px;
     padding: 5px;
     border: #225f53 4px solid;
@@ -94,10 +95,61 @@ ul {
     padding: 20px 0px 20px 0px;
 }
 
+@media screen and (min-width: 767px) {
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        padding: 12px 16px;
+        z-index: 1;
+    }
+    .dropdown-content>a {
+        display: block;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    .lightbox {
+        /* Default to hidden */
+        display: none;
+        /* Overlay entire screen */
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /* A bit of padding around image */
+        padding: 1em;
+        /* Translucent background */
+        background: rgba(0, 0, 0, 0.8);
+    }
+    /* Unhide the lightbox when it's the target */
+    .lightbox:target {
+        display: block;
+    }
+    .lightbox span {
+        /* Full width and height */
+        display: block;
+        width: 100%;
+        height: 100%;
+        /* Size and position background image */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
 
 /* desktop view */
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1280px) {
     .skip a:focus {
         top: 20px;
         visibility: visible;
